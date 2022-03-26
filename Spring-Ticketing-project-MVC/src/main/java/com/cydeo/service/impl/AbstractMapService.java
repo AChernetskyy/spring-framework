@@ -1,17 +1,22 @@
 package com.cydeo.service.impl;
 
+import com.cydeo.dto.UserDTO;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class AbstractMapService <ID, T> {
-    protected Map<ID, T> map = new HashMap<>();
-    T save(ID id, T object){
-        map.put(id, object);
+public abstract class AbstractMapService <T, ID> {
+    protected Map<ID,T> map = new HashMap<>();
+
+
+    T save(ID id,T object){
+        map.put(id,object);
         return object;
     }
-    List<T>findAll(){
+
+    List<T> findAll(){
         return new ArrayList<>(map.values());
     }
 
