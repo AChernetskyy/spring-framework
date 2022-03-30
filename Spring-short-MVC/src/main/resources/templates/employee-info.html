@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Info</title>
+</head>
+<body>
+Firstname: <h3 th:text="${emp.firstName}"></h3>
+LastName: <h3 th:text="${emp.lastName}"></h3>
+Salary: <h3 th:text="${emp.salary}"></h3>
+
+<h4 th:text="${'Hello '+ emp.firstName}"></h4>
+<a th:href="@{/employees(name=Mike)}">Name</a>
+<br>
+<a th:href="@{/welcome}">Employee List</a>
+<br>
+<a th:href="@{/employees(name=${emp.firstName})}">Employee First Name</a>
+
+<p></p>
+
+<div th:text="${emp.salary>10000 ? 'Yes' : 'No'}"></div>
+<div>
+    <span th:if="${emp.firstName=='Anton'}">Hi Anton</span>
+    <span th:unless="${emp.firstName=='Anton'}">Not Anton</span>
+
+</div>
+
+
+</body>
+</html>

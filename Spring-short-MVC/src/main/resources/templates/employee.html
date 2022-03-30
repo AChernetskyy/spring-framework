@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Employee</title>
+    <link th:href="@{/custom.css}" rel="stylesheet" media="screen">
 </head>
 <body>
-<h2>Employee</h2>
+<h2 class="customDesign">Employee</h2>
 <ul>
     <li th:text="${name}"></li>
+    <li th:each="employee : ${employeeList}" th:text="${employee.firstName}"></li>
 </ul>
+
+<table class="customDesign">
+    <thead>
+    <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Salary</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee:${employeeList}">
+        <td th:text="${employee.firstName}"></td>
+        <td th:text="${employee.lastName}"></td>
+        <td th:text="${employee.salary}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:replace="/fragments/footer :: footer-fixed"></div>
 </body>
 </html>
