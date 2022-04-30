@@ -17,7 +17,7 @@ public class Regions {
     private String region;
     private String country;
 
-    @OneToMany(mappedBy = "departments")
-    private List<Employees> employees;
+  // @OneToMany(mappedBy = "departments")
+// private List<Employees> employees;
 
 }

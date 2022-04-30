@@ -23,11 +23,11 @@ public class Employees {
     private Gender gender;
     private Integer salary;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "department")
     private Departments departments;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "region_id")
     private Regions regions;
 
